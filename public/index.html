@@ -2,42 +2,146 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/img/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta name="theme-color" content="#202020" />
+    <meta name="description" content="A simple to-do list app" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="%PUBLIC_URL%/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="%PUBLIC_URL%/img/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/img/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Critical css -->
+    <style>
+      :root {
+        --color-primary: rgb(252, 194, 215);
+        --color-secondary: rgb(121, 80, 242);
+        --color-text-primary: rgb(210, 210, 210);
+        --color-text-inverse: rgb(26, 26, 26);
+        --color-background-tint: rgb(32, 32, 32);
+        --gradient: linear-gradient(
+          to right bottom,
+          var(--color-primary),
+          var(--color-secondary)
+        );
+
+        --spacing-s: 0.8rem;
+        --spacing-m: 1.2rem;
+        --spacing-l: 1.6rem;
+        --spacing-2xl: 3.2rem;
+        --spacing-3xl: 4.8rem;
+
+        --weight-semibold: 600;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      .btn,
+      .btn:link,
+      .btn:visited {
+        border-radius: 2px;
+        color: inherit;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: var(--weight-semibold);
+        padding: var(--spacing-l) var(--spacing-2xl);
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .btn--primary {
+        background: var(--gradient);
+        background-size: 300% 100%;
+        color: var(--color-text-inverse);
+      }
+
+      .btn--icon {
+        padding: var(--spacing-m) var(--spacing-l);
+      }
+
+      .form {
+        background: var(--color-background-tint);
+        padding: var(--spacing-l);
+      }
+
+      .form--init-hidden {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        pointer-events: none;
+      }
+
+      .form input,
+      .form select {
+        background: var(--color-background-tint);
+        border: 1px solid;
+        border-image: linear-gradient(
+            to right,
+            var(--color-primary),
+            var(--color-secondary)
+          )
+          1;
+        color: var(--color-text-primary);
+        font-size: 1.5rem;
+        height: 5.5rem;
+        width: 100%;
+      }
+
+      .form select {
+        appearance: none;
+        background-image: url('%PUBLIC_URL%/icons/icon-chevron-down.svg');
+        background-position: calc(100% - var(--spacing-s)) center;
+        background-repeat: no-repeat;
+        background-size: 2.4rem;
+        padding: var(--spacing-m);
+      }
+
+      .form--thin input,
+      .form--thin select {
+        height: 4.5rem;
+      }
+
+      .filters__form {
+        margin-bottom: var(--spacing-3xl);
+      }
+
+      @media only screen and (max-width: 59em) {
+        html {
+          font-size: 56.25%;
+        }
+
+        nav {
+          transform: translateX(-100%);
+        }
+      }
+
+      @media only screen and (max-width: 44em) {
+        html {
+          font-size: 50%;
+        }
+      }
+    </style>
+    <title>todo</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
